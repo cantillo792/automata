@@ -1,9 +1,6 @@
 from ventana.ventana import Ventana
 
-
-
 try:
    Ventana()
-
 except:
-    print("sss")
+    print("Error")

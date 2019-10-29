@@ -1,5 +1,17 @@
-#Clase autómata
-from evaluador.automata.paso import *
+from evaluador.estado import Estado
+from evaluador.pila import Pila
+
+class Paso:
+    def __init__(self, estadoActual, posCinta, pila):
+        self.estadoActual = estadoActual.getValor()
+        self.posCinta = posCinta
+        self.pila = str(pila)
+        self.transicion = ""
+    def setTransicion(self, transicion):
+        self.transicion = transicion
+    def __str__(self):
+        return "estado: "+str(self.estadoActual)+"\nposición cinta: "+str(self.posCinta)+"\npila: "+str(self.pila)+"\ntransición: "+str(self.transicion)
+
 class Automata():
     def __init__(self):
         self.estados = []
@@ -7,7 +19,7 @@ class Automata():
         self.pila = Pila()
         self.pila.incluir("#")
 
-    def addEstado(self, valor, final):
+    def estado(self, valor, final):
         self.estados.append(Estado(valor, final))
 
     def buscar(self, valor):
@@ -18,7 +30,7 @@ class Automata():
     def getEstados(self):
         return self.estados
 
-    def conectar(self, simbolo, tope, agregar,  valorOrigen, valorDestino):
+    def transicion(self, simbolo, tope, agregar,  valorOrigen, valorDestino):
         origen = self.buscar(valorOrigen)
         destino = self.buscar(valorDestino)
         if origen is not None and destino is not None:
@@ -49,7 +61,7 @@ class Automata():
             pasos.append(paso.__dict__)
         return pasos
 
-    def Evaluar(self, palabra):
+    def evaluar(self, palabra):
         pasos = []
         for letra in palabra:
             self.palabra.append(letra)
