@@ -1,5 +1,5 @@
 #Clase autómata
-from automata.paso import *
+from evaluador.automata.paso import *
 class Automata(Grafo):
     def __init__(self):
         super().__init__()

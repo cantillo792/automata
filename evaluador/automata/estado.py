@@ -1,5 +1,5 @@
-from grafo.nodo import Nodo, Arista
-from automata.transicion import Transicion
+from evaluador.grafo.nodo import Nodo, Arista
+from evaluador.automata.transicion import Transicion
 class Estado(Nodo):
     
     def __init__(self, valor, final):

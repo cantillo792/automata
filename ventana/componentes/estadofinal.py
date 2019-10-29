@@ -1,5 +1,5 @@
 from tkinter import *
-from componentes.estado import Estado
+from ventana.componentes.estado import Estado
 class EstadoFinal(Estado):
     def __init__(self, lienzo, texto, coords):
         super().__init__(lienzo, texto, coords)

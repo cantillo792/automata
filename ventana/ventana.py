@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
-from componentes.automata import Automata
-from validador import Validador
+from ventana.componentes.automata import Automata
+from ventana.validador import Validador
 
 class Ventana:
     def __init__(self):
@@ -19,7 +19,7 @@ class Ventana:
     def validar(self):
         self.automata.actualizar(self.raiz)
         self.automata.lienzo.delete(self.automata.mensaje)
-        self.validador.validar(self.automata,self.entry.get())
+        self.validador.validar(self.automata,self.entry.get(), False)
 if __name__ == "__main__":
     try:
         Ventana()

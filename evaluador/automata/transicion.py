@@ -1,4 +1,4 @@
-from grafo.arista import Arista
+from evaluador.grafo.arista import Arista
 
 class Transicion(Arista):
     def __init__(self, valor, simbolo, tope, agregar,destino):

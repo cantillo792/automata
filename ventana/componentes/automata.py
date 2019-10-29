@@ -1,8 +1,8 @@
 from tkinter import *
-from componentes.arco import Arco
-from componentes.estado import Estado
-from componentes.transicion import Transicion
-from componentes.estadofinal import EstadoFinal
+from ventana.componentes.arco import Arco
+from ventana.componentes.estado import Estado
+from ventana.componentes.transicion import Transicion
+from ventana.componentes.estadofinal import EstadoFinal
 class Automata:
     def __init__(self, raiz):
         self.raiz = raiz
@@ -35,7 +35,7 @@ class Automata:
 
         #Estado q
         self.q = Estado(self.lienzo, "q", [350,250,450,350])
-        self.texto2= self.lienzo.create_text(400,298,fill="black",font="Algerian 16 bold",text="q")
+        self.texto2= self.lienzo.create_text(400,298,fill="black",font="Arial 16 bold",text="q")
         self.arcoq = Arco(self.lienzo, [360, 190, 440, 340], [440,270,440,271])
         self.qr = self.lienzo.create_line([450,300,550,300],arrow=LAST,width=3, fill="black")
         self.transiciones.append(Transicion(self.lienzo,[500,320],"*,#/#"))
@@ -46,7 +46,7 @@ class Automata:
 
         #Estado r
         self.r = EstadoFinal(self.lienzo, "r", [550,250,650,350])
-        self.texto3= self.lienzo.create_text(600,298,fill="black",font="Algerian 16 bold",text="r",activefill="magenta")
+        self.texto3= self.lienzo.create_text(600,298,fill="black",font="Arial 16 bold",text="r",activefill="magenta")
         self.estados.append(self.r)
     
     def activarEstado(self, valor):
@@ -96,7 +96,7 @@ class Automata:
 
         #Estado q
         self.q = Estado(self.lienzo, "q", [350,250,450,350])
-        self.texto2= self.lienzo.create_text(400,298,fill="black",font="Algerian 16 bold",text="q")
+        self.texto2= self.lienzo.create_text(400,298,fill="black",font="Arial 16 bold",text="q")
         self.arcoq = Arco(self.lienzo, [360, 190, 440, 340], [440,270,440,271])
         self.qr = self.lienzo.create_line([450,300,550,300],arrow=LAST,width=3, fill="black")
         self.transiciones.append(Transicion(self.lienzo,[500,320],"*,#/#"))
@@ -107,5 +107,5 @@ class Automata:
 
         #Estado r
         self.r = EstadoFinal(self.lienzo, "r", [550,250,650,350])
-        self.texto3= self.lienzo.create_text(600,298,fill="black",font="Algerian 16 bold",text="r",activefill="magenta")
+        self.texto3= self.lienzo.create_text(600,298,fill="black",font="Arial 16 bold",text="r",activefill="magenta")
         self.estados.append(self.r)

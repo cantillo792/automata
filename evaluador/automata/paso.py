@@ -1,6 +1,6 @@
-from grafo.grafo import Grafo, Nodo
-from automata.estado import Estado
-from automata.pila import Pila
+from evaluador.grafo.grafo import Grafo, Nodo
+from evaluador.automata.estado import Estado
+from evaluador.automata.pila import Pila
 
 class Paso:
     def __init__(self, estadoActual, posCinta, pila):

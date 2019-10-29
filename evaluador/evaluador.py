@@ -1,4 +1,4 @@
-from automata.automata import *
+from evaluador.automata.automata import *
 
 class Evaluador:
     def __init__(self):
@@ -25,7 +25,7 @@ class Evaluador:
             aceptada = True
         else:
             aceptada = False
-        print(str(pasos)+str(aceptada))
+        return [aceptada, pasos]
 
 evaluador = Evaluador()
 evaluador.evaluar("aabcbaa")

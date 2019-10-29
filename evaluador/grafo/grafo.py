@@ -1,4 +1,4 @@
-from grafo.nodo import Nodo
+from evaluador.grafo.nodo import Nodo
 
 class Grafo():
     def __init__(self):
