@@ -3,7 +3,7 @@ import time
 import ast
 class Validador:
     
-    def validar(self, automata, palabra, lento):
+    def validar(self, automata, palabra, modo):
         
         lienzo = automata.lienzo
         for boton in automata.botones_cinta:
@@ -16,7 +16,7 @@ class Validador:
         automata.cinta = []
         self.palabra = palabra
         res = Evaluador().evaluar(self.palabra)
-        if lento==True:
+        if modo==1:
             
             
             pasos = res[1]

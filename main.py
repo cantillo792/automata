@@ -1,6 +1,5 @@
 from ventana.ventana import Ventana
+import threading
 
-try:
-   Ventana()
-except:
-    print("Error")
+ventana = Ventana()
+ventana.raiz.mainloop()

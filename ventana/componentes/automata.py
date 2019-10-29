@@ -14,7 +14,7 @@ class Automata:
         self.pila = []
         self.estados = []
         self.transiciones = []
-        self.lienzo=Canvas(raiz, width=800, height=400, bg="#e0e0e0")
+        self.lienzo=Canvas(raiz, width=800, height=360, bg="#e0e0e0")
         self.lienzo.pack()
         self.inicio = self.lienzo.create_line([120,300,150,300],arrow=LAST,width=3, fill="black")
         self.transiciones.append(Transicion(self.lienzo,[130,240],"a,#/#a"))
