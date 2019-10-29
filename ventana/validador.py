@@ -27,7 +27,7 @@ class Validador:
             x1 = 90
             y1 = 50
             for m in automata.cinta:
-                btn = lienzo.create_rectangle(x0,y0,x1,y1,fill="gray")
+                btn = lienzo.create_rectangle(x0,y0,x1,y1,fill="white")
                 label = lienzo.create_text(x0 + 16,y0+20,text=m)
                 x0 = x0 + 30
                 x1 = x1 + 30
@@ -42,7 +42,7 @@ class Validador:
                         lienzo.delete(label)
                     coordsbtn = lienzo.coords(automata.botones_cinta[paso['posCinta']])
                     coordslabel = lienzo.coords(automata.label_cinta[paso['posCinta']])
-                    automata.botones_cinta[paso['posCinta']] = lienzo.create_rectangle(coordsbtn,fill="red")
+                    automata.botones_cinta[paso['posCinta']] = lienzo.create_rectangle(coordsbtn,fill="gray")
                     automata.label_cinta[paso['posCinta']] = lienzo.create_text(coordslabel,text=automata.cinta[paso['posCinta']])
                 except:
                     print("s")
@@ -55,7 +55,7 @@ class Validador:
                 automata.activarEstado(paso['estadoActual'])
                 for elem in pila:
                     lienzo.pack()
-                    btn = lienzo.create_rectangle(x0,y0,x1,y1,fill="gray")
+                    btn = lienzo.create_rectangle(x0,y0,x1,y1,fill="white")
                     label = lienzo.create_text(x0 + 10,y0+15,text=elem)
                     automata.botones_pila.append(btn)
                     automata.label_pila.append(label)

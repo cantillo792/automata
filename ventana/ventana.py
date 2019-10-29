@@ -9,16 +9,16 @@ class Ventana():
         self.raiz.geometry("800x500")
         
         self.automata = Automata(self.raiz)
-        self.entry = Entry(self.raiz,  width=80)
-        self.entry.pack()
+        self.entry = Entry(self.raiz,  width=42)
+        self.entry.place(x=100, y=380)
         self.validador = Validador()
-        self.button = Button(self.raiz, text="Validar", command=lambda: self.validar())
-        self.button.pack()
+        self.button = Button(self.raiz, text="Iniciar", command=lambda: self.validar())
+        self.button.place(x=595, y=375)
         self.modo = IntVar()
         self.lento = Radiobutton(self.raiz, text="Lento", variable=self.modo, value=1)
         self.rapido = Radiobutton(self.raiz, text="Rapido", variable=self.modo, value=2)
-        self.lento.pack()
-        self.rapido.pack()
+        self.lento.place(x=445, y=380)
+        self.rapido.place(x=515, y=380)
         self.raiz.configure(bg = "#e0e0e0")
 
     def validar(self):
