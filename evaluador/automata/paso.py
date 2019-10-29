@@ -1,4 +1,3 @@
-from evaluador.grafo.grafo import Grafo, Nodo
 from evaluador.automata.estado import Estado
 from evaluador.automata.pila import Pila
 

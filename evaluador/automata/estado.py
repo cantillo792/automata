@@ -1,30 +1,28 @@
-from evaluador.grafo.nodo import Nodo, Arista
 from evaluador.automata.transicion import Transicion
-class Estado(Nodo):
+class Estado:
     
     def __init__(self, valor, final):
-        super().__init__(valor)
-        self.__transiciones = self._Nodo__aristas
-        self.addTransicion = self.addArista
-        self.__final = final
+        self.valor = valor
+        self.transiciones = []
+        self.final = final
     
-    def addArista(self, valor, simbolo, tope, agregar, destino):
-        self._Nodo__aristas.append(Transicion(valor, simbolo, tope, agregar, destino))
+    def addTransicion(self, valor, simbolo, tope, agregar, destino):
+        self.transiciones.append(Transicion(valor, simbolo, tope, agregar, destino))
     
     def getValor(self):
-        return self._Nodo__valor
+        return self.valor
     
     def getTransiciones(self):
-        return self.__transiciones
+        return self.transiciones
     
     def esFinal(self):
-        return self.__final
+        return self.final
 
     def buscarTransicion(self, simbolo, tope):
-        for t in self.__transiciones:
+        for t in self.transiciones:
             if t.simbolo == simbolo and t.tope == tope:
                 return t
         return None
 
     def __str__(self):
-        return self._Nodo__valor
+        return self.valor

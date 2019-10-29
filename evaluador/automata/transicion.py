@@ -1,8 +1,7 @@
-from evaluador.grafo.arista import Arista
-
-class Transicion(Arista):
+class Transicion:
     def __init__(self, valor, simbolo, tope, agregar,destino):
-        super().__init__(valor, destino)
+        self.valor = valor
+        self.destino = destino
         self.simbolo = simbolo
         self.tope = tope 
         self.agregar = agregar
