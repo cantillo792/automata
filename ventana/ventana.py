@@ -1,6 +1,5 @@
 from tkinter import *
 from tkinter import ttk
-from tkthread import TkThread
 from ventana.componentes.automata import Automata
 from ventana.validador import Validador
 import threading
