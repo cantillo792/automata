@@ -45,7 +45,7 @@ class Validador:
                     automata.botones_cinta[paso['posCinta']] = lienzo.create_rectangle(coordsbtn,fill="gray")
                     automata.label_cinta[paso['posCinta']] = lienzo.create_text(coordslabel,text=automata.cinta[paso['posCinta']])
                 except:
-                    print("s")
+                    print("")
                 lienzo.update()
                 x0 = 620
                 y0 = 200
@@ -70,7 +70,7 @@ class Validador:
                     automata.desactivarTransicion(str(paso['transicion']['transicion']))
                     automata.desactivarEstado(paso['estadoActual'])
                 except:
-                    print("a")
+                    print("")
         
         if res[0]:
             automata.mensaje = lienzo.create_text([400, 100], fill="green", text="PALABRA ACEPTADA")

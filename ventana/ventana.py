@@ -7,7 +7,7 @@ class Ventana():
     def __init__(self):
         self.raiz = Tk()
         self.raiz.geometry("800x500")
-        
+        self.raiz.title("Automata de pila - Escuchando")
         self.automata = Automata(self.raiz)
         self.entry = Entry(self.raiz,  width=42)
         self.entry.place(x=100, y=380)

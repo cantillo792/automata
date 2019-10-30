@@ -2,24 +2,24 @@ from ventana.ventana import Ventana
 import threading
 import speech_recognition as sr
 from tkinter import *
+import time
 
-r = sr.Recognizer()
-
-threads = []
-
+#Inicializar ventana
 ventana = Ventana()
 
+#Inicializar reconocimiento de voz
+r = sr.Recognizer()
 
-def recon():
+
+def reconocer():
     while 1:
         with sr.Microphone() as source:
-            print("SAY")
-            audio = r.record(source, offset=0.5,duration=2)
-            print("TIME OVER")
-
+            print("Escuchando")
+            ventana.raiz.title("Automata de pila - Escuchando")
+            audio = r.record(source, offset=0.05,duration=2.15)
         try:
             texto = r.recognize_google(audio, language='es-es')
-            print("TEXT:  "+texto)
+            print("Reconocido:  "+texto)
             if(texto == "lento"):
                 ventana.modo.set(1)
             elif texto=="rápido":
@@ -29,13 +29,17 @@ def recon():
             elif texto=="iniciar":
                 ventana.validar()
         except:
+            ventana.raiz.title("Automata de pila - No reconocido")
             print("no reconocido")
+            time.sleep(2.2)
 
-reconocimiento = threading.Thread(target=recon, args=())
+
+#Reconocer en segundo plano
+reconocimiento = threading.Thread(target=reconocer, args=())
 reconocimiento.setDaemon(True)
-threads.append(reconocimiento)
 reconocimiento.start()
 
+#Abrir ventana
 ventana.raiz.mainloop()
 
 

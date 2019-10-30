@@ -24,6 +24,7 @@ class Automata:
         self.transiciones.append(Transicion(self.lienzo,[130,160],"a,b/ba"))
         self.transiciones.append(Transicion(self.lienzo,[130,140],"b,b/bb"))
         self.mensaje = self.lienzo.create_text([400, 100], fill="green", text="")
+        
         #Estado p
         self.p = Estado(self.lienzo, "p", [150,250,250,350])
         self.arcop = Arco(self.lienzo, [160, 190, 240, 340], [240,270,240,271])
