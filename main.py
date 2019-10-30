@@ -39,6 +39,8 @@ reconocimiento = threading.Thread(target=reconocer, args=())
 reconocimiento.setDaemon(True)
 reconocimiento.start()
 
+#####
+
 #Abrir ventana
 ventana.raiz.mainloop()
 
