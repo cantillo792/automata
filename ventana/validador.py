@@ -47,10 +47,10 @@ class Validador:
                 except:
                     print("")
                 lienzo.update()
-                x0 = 620
-                y0 = 180
-                x1 = 650
-                y1 = 210
+                x0 = 680
+                y0 = 280
+                x1 = 710
+                y1 = 310
                 pila = ast.literal_eval(paso['pila'])
                 automata.activarEstado(paso['estadoActual'])
                 for elem in pila:
